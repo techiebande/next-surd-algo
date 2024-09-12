@@ -1,16 +1,25 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Providers } from "./providers";
+import Dashboard from "@/components/dashboard";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const segoeUIRegular = localFont({
+  src: "./fonts/SegoeUI.ttf",
+  variable: "--font-segoe-ui",
+  weight: "400",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+
+const segoeUISemibold = localFont({
+  src: "./fonts/seguisb.ttf",
+  variable: "--font-segoe-ui-semibold",
+  weight: "500",
+});
+
+const segoeUIBold = localFont({
+  src: "./fonts/SegoeUIBold.ttf",
+  variable: "--font-segoe-ui-bold",
+  weight: "600, 700",
 });
 
 export const metadata: Metadata = {
@@ -24,12 +33,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html lang="en" suppressHydrationWarning>
+      <Providers>
+        <body
+          className={`${segoeUIRegular.variable} ${segoeUIBold.variable} ${segoeUISemibold.variable} antialiased font-segoeUI flex`}
+        >
+          <Dashboard />
+          {children}
+        </body>
+      </Providers>
     </html>
   );
 }
