@@ -7,24 +7,29 @@ import CartIcon from "@/icons/cart.svg";
 const EACard = ({
   image,
   description,
-  subTitle,
+  version,
   title,
+  onClick,
 }: {
   image: string;
   title: string;
-  subTitle: string;
+  version: string;
   description: string;
+  onClick: () => void;
 }) => {
   return (
-    <RoundedShadowedBox className="flex gap-3 p-[10px] border border-surd-grey-2 font-segoeUI">
-      <Image src={image} alt="" width={171} height={171} />
-      <div className="flex flex-col gap-[10px]">
+    <RoundedShadowedBox
+      onClick={onClick}
+      className="flex gap-3 p-[10px] border border-surd-grey-2 font-segoeUI cursor-pointer"
+    >
+      <Image className="w-[40%]" src={image} alt="" width={171} height={171} />
+      <div className="flex flex-col gap-[10px] w-[60%]">
         <div className="flex flex-col">
           <span className="font-segoeUIBold">{title}</span>
-          <span className="text-sm">{subTitle}</span>
+          <span className="text-sm">{version}</span>
         </div>
 
-        <p className="text-xs">{description}</p>
+        <p className="text-xs text-ellipsis">{description}</p>
         <Button className="bg-surd-yellow-1 text-black hover:bg-surd-yellow-1 mt-auto gap-2 flex items-center justify-center h-[38px]">
           <Image src={CartIcon} alt="" width={20} height={20} />
           Purchase

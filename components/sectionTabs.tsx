@@ -4,7 +4,7 @@ import React, { useState } from "react";
 const SectionTabs = ({ items }: { items: { name: string }[] }) => {
   const [activeTab, setActiveStrategyTab] = useState(items[0]);
   return (
-    <ul className="w-full bg-surd-white-1 dark:bg-surd-grey-9 h-[46px] flex items-center gap-[2px]">
+    <ul className="w-full bg-surd-white-1 dark:bg-surd-grey-9 h-[46px] flex items-center gap-[2px] overflow-x-auto">
       {items.map((item, index) => {
         return (
           <li

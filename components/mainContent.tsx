@@ -7,6 +7,7 @@ import GrindStrategyOverview from "./grindStrategyOverview";
 import GrindStrategy from "./grindStrategy";
 import GrindStrategyByDate from "./grindStrategyByDate";
 import EAs from "./EAs";
+import Perceptrader from "./perceptrader";
 
 const MainContent = () => {
   const { isSidebarFold, dashboardState } = useContext(DashboardContext);
@@ -34,6 +35,9 @@ const MainContent = () => {
           <GrindStrategyByDate />
         ) : null}
         {dashboardState.currentTab.name === "EAs" ? <EAs /> : null}
+        {dashboardState.currentTab.name === "Perceptrader" ? (
+          <Perceptrader />
+        ) : null}
       </div>
     </div>
   );

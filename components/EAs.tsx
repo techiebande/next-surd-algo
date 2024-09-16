@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import SectionContainer from "./sectionContainer";
 import SectionTabs from "./sectionTabs";
 import { EATabItems } from "@/lib/EATabItems";
 import SectionHeader from "./SectionHeader";
 import EACard from "./EACard";
+import { expertAdvicers } from "@/lib/expertAdvicers";
+import { DashboardContext } from "./dashboard";
+import CardsGrid from "./CardsGrid";
 
 const EAs = () => {
+  const { dashboardState, setDashboardState } = useContext(DashboardContext);
   return (
     <SectionContainer>
       <SectionTabs items={EATabItems} />
@@ -14,32 +18,25 @@ const EAs = () => {
           title="Expert Advisers"
           location="Home / Expert Advisers"
         />
-        <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          <EACard
-            image="/images/perceptrader.png"
-            title="PERCEPTRADER AI"
-            subTitle="Version 0.01"
-            description="Perceptrader AI is a cutting-edge grid trading system that leverages the power of Artificial Intelligence... Learn more"
-          />
-          <EACard
-            image="/images/evening_scalper.png"
-            title="EVENING SCALPER"
-            subTitle="Version 0.01"
-            description="Evening Scalper Pro a state-of-the-art mean-reversion trading system that operates during the American trading session..."
-          />
-          <EACard
-            image="/images/perceptrader.png"
-            title="PERCEPTRADER AI"
-            subTitle="Version 0.01"
-            description="Perceptrader AI is a cutting-edge grid trading system that leverages the power of Artificial Intelligence... Learn more"
-          />
-          <EACard
-            image="/images/evening_scalper.png"
-            title="EVENING SCALPER"
-            subTitle="Version 0.01"
-            description="Evening Scalper Pro a state-of-the-art mean-reversion trading system that operates during the American trading session..."
-          />
-        </div>
+        <CardsGrid>
+          {expertAdvicers.map(
+            ({ image, description, title, version }, index) => (
+              <EACard
+                onClick={() => {
+                  setDashboardState({
+                    ...dashboardState,
+                    currentTab: { name: "Perceptrader" },
+                  });
+                }}
+                key={index}
+                image={image}
+                title={title}
+                version={version}
+                description={description}
+              />
+            )
+          )}
+        </CardsGrid>
       </div>
     </SectionContainer>
   );

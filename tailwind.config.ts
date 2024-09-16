@@ -68,6 +68,7 @@ const config: Config = {
         "surd-yellow-1": "#FFC960",
         "surd-orange-1": "#EF9D27",
         "surd-white-1": "#f6f6f6",
+        "surd-green-1": "#2BBB0845",
       },
       borderRadius: {
         // md: "var(--radius)",
