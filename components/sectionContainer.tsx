@@ -1,23 +1,23 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 
-const RoundedBox = ({
+const SectionContainer = ({
   children,
   className,
-  onClick,
 }: {
   children: React.ReactNode;
   className?: string;
-  onClick?: any;
 }) => {
   return (
     <div
-      onClick={onClick}
-      className={cn("rounded-surd-rounded-10px", className)}
+      className={cn(
+        "dark:text-white bg-surd-grey-5 dark:bg-surd-grey-3 space-y-5 min-h-[calc(100vh-65px)]",
+        className
+      )}
     >
       {children}
     </div>
   );
 };
 
-export default RoundedBox;
+export default SectionContainer;

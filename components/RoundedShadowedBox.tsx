@@ -7,9 +7,9 @@ const RoundedShadowedBox = ({
   children,
   onClick,
 }: {
-  className: string;
+  className?: string;
   children: React.ReactNode;
-  onClick: any;
+  onClick?: any;
 }) => {
   return (
     <RoundedBox

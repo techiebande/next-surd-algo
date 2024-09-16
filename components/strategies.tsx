@@ -1,22 +1,22 @@
 import React from "react";
-import StrategyTabs from "./strategyTabs";
+import StrategyTabs from "./sectionTabs";
 import StrategyCard from "./strategyCard";
 import AddNewNewStrategy from "./newStrategyModal";
+import SectionContainer from "./sectionContainer";
+import SectionTabs from "./sectionTabs";
+import { strategyTabItems } from "@/lib/strategyTabItems";
+import SectionHeader from "./SectionHeader";
 
 const Strategies = () => {
   return (
-    <div className="dark:text-white bg-surd-grey-5 dark:bg-surd-grey-3 space-y-5 h-[calc(100vh-65px)]">
-      <StrategyTabs />
+    <SectionContainer>
+      <SectionTabs items={strategyTabItems} />
       <div className="px-5">
-        <div className="flex items-start justify-between">
-          <div className="flex flex-col gap-2">
-            <h2 className="text-2xl font-segoeUISemiBold">Strategies</h2>
-            <span className="text-sm dark:text-surd-grey-4">
-              Home / Strategies
-            </span>
-          </div>
-          <AddNewNewStrategy />
-        </div>
+        <SectionHeader
+          title="Strategies"
+          location="Home / Strategies"
+          actionButton={<AddNewNewStrategy />}
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-5">
           <StrategyCard
@@ -37,7 +37,7 @@ const Strategies = () => {
           />
         </div>
       </div>
-    </div>
+    </SectionContainer>
   );
 };
 

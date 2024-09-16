@@ -14,8 +14,7 @@ const Sidebar = () => {
     setActiveTab(item);
   };
 
-  const { isSidebarFold, toggleSidebar, dashboardState, changeCurrentTab } =
-    useContext(DashboardContext);
+  const { isSidebarFold, changeCurrentTab } = useContext(DashboardContext);
 
   const sidebarClass = `${isSidebarFold ? "" : "md:w-[170px]"}`;
 
