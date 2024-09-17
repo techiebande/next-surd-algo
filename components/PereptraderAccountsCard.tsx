@@ -55,14 +55,14 @@ const PereptraderAccountsCard = ({
       </div>
       <div className="mt-5 text-center">
         {accountType === "Live Account" ? (
-          <p className="text-white text-sm">Current Plan: Basic</p>
+          <p className=" text-sm">Current Plan: Basic</p>
         ) : null}
         {accountType === "Live Account" ? (
-          <p className="text-sm mt-5 text-surd-yellow-1 font-segoeUIBold">
+          <p className="text-sm mt-5 text-surd-dark-blue dark:text-surd-yellow-1 font-segoeUIBold">
             Upgrade Plan
           </p>
         ) : (
-          <p className="text-sm mt-5 text-surd-yellow-1 font-segoeUIBold ">
+          <p className="text-sm mt-5 text-surd-dark-blue dark:text-surd-yellow-1 font-segoeUIBold ">
             Make Live Account
           </p>
         )}

@@ -11,6 +11,7 @@ import CardsGrid from "./CardsGrid";
 import { perceptraderAccountTypes } from "@/lib/perceptraderAccountTypes";
 import PereptraderAccountsCard from "./PereptraderAccountsCard";
 import { platform } from "os";
+import DownloadAdvicer from "./DownloadAdvicer";
 
 const Perceptrader = () => {
   const { title, version, image, detailedDescription } = expertAdvicers[0];
@@ -27,10 +28,7 @@ const Perceptrader = () => {
         </div>
         <div className="flex flex-col md:flex-row gap-y-2">
           <SectionTabs items={perceptraderTabItems} />
-          <Button className="text-surd-yellow-1 bg-black h-[46px] w-[171px] gap-2 flex items-center justify-center rounded-none">
-            <Download />
-            Download
-          </Button>
+          <DownloadAdvicer />
         </div>
         <div className="flex flex-wrap items-center gap-5 px-5">
           <Button className="h-[38px] flex items-center justify-center bg-transparent hover:bg-transparent border-surd-dark-blue text-surd-dark-blue border dark:border-surd-yellow-1 dark:text-surd-yellow-1">

@@ -26,19 +26,6 @@ export default function AddNewNewStrategy() {
             <h2 className="text-lg font-segoeUISemiBold text-center text-white">
               New Strategy
             </h2>
-            <DialogClose asChild>
-              <Button
-                type="button"
-                className="bg-transparent hover:bg-transparent focus:bg-transparent p-0 absolute right-5"
-              >
-                <Image
-                  src={CloseIcon}
-                  alt="close modal"
-                  width={24}
-                  height={24}
-                />
-              </Button>
-            </DialogClose>
           </div>
         </DialogHeader>
         <div className="space-y-5 p-2 pb-5 lg:p-5 text-sm text-white">
