@@ -6,11 +6,9 @@ import Image from "next/image";
 import SectionTabs from "./sectionTabs";
 import { perceptraderTabItems } from "@/lib/perceptraderTabItems";
 import { Button } from "./ui/button";
-import { Download } from "lucide-react";
 import CardsGrid from "./CardsGrid";
 import { perceptraderAccountTypes } from "@/lib/perceptraderAccountTypes";
 import PereptraderAccountsCard from "./PereptraderAccountsCard";
-import { platform } from "os";
 import DownloadAdvicer from "./DownloadAdvicer";
 
 const Perceptrader = () => {
