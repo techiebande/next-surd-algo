@@ -38,7 +38,6 @@ export default function RootLayout({
         <body
           className={`${segoeUIRegular.variable} ${segoeUIBold.variable} ${segoeUISemibold.variable} antialiased font-segoeUI flex`}
         >
-          <Dashboard />
           {children}
         </body>
       </Providers>
