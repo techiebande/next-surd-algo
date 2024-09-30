@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { DashboardContext } from "./dashboard";
+import { AdminDashboardContext } from "./admin/admin-dashboard";
 
 const Logo = () => {
-  const { isSidebarFold } = useContext(DashboardContext);
+  const { isSidebarFold } = useContext(AdminDashboardContext);
   return (
     <div
       className="flex justify-center items-center gap-2 w-full md:justify-start"

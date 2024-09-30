@@ -20,7 +20,7 @@ const EACard = ({
   return (
     <RoundedShadowedBox
       onClick={onClick}
-      className="flex gap-3 p-[10px] border border-surd-grey-2 font-segoeUI cursor-pointer"
+      className="flex gap-3 p-[10px] border border-surd-grey-2 font-segoeUI cursor-pointer text-gray-800 dark:text-white"
     >
       <Image className="w-[40%]" src={image} alt="" width={171} height={171} />
       <div className="flex flex-col gap-[10px] w-[60%]">

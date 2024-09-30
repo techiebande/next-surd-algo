@@ -23,7 +23,7 @@ const SidebarItem = ({
     <li
       onClick={onClick}
       className={cn(
-        active ? "bg-surd-grey-5 dark:bg-surd-grey-3" : "",
+        active ? "bg-surd-grey-5 dark:bg-surd-grey-9" : "",
         "flex gap-5 items-center justify-center md:justify-start h-[45px] relative md:pl-7 cursor-pointer"
       )}
     >

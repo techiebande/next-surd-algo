@@ -1,6 +1,7 @@
+import { IconsInterface } from "@/interfaces/icons";
 import React from "react";
 
-const HomeIcon = ({ color, size }: { color: string; size: number }) => {
+const HomeIcon = ({ color, size }: IconsInterface) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

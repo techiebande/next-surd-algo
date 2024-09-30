@@ -7,13 +7,13 @@ import MenuUnFold from "@/icons/menu-unfold-line.svg";
 import HamburgerMenu from "@/icons/menu-line.svg";
 
 import Image from "next/image";
-import { DashboardContext } from "./dashboard";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import NavbarItems from "./navbarItems";
+import { AdminDashboardContext } from "./admin/admin-dashboard";
 
 const Navbar = () => {
-  const { isSidebarFold, toggleSidebar } = useContext(DashboardContext);
+  const { isSidebarFold, toggleSidebar } = useContext(AdminDashboardContext);
   const [showMobileNav, setShowMobileNav] = useState(false);
 
   const toggleMobileNav = () => {
@@ -21,7 +21,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-surd-dark-blue flex items-center justify-between dark:bg-black h-[65px] w-full px-5">
+    <nav className="bg-surd-dark-blue flex items-center justify-between dark:bg-black h-[67px] w-full px-5">
       {isSidebarFold ? (
         <button onClick={toggleSidebar} className="hidden md:block w-4 min-w-4">
           <Image width={16} height={13} src={MenuUnFold} alt="unfold sidebar" />

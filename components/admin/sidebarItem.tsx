@@ -16,7 +16,7 @@ const SidebarItem = ({ name, active, onClick, icon }: SidebarItemProps) => {
     <li
       onClick={onClick}
       className={cn(
-        active ? "bg-surd-grey-5 dark:bg-surd-grey-3" : "",
+        active ? "bg-surd-grey-5 dark:bg-surd-grey-9" : "",
         "flex gap-5 items-center justify-center md:justify-start h-[45px] relative md:pl-7 cursor-pointer"
       )}
     >
@@ -25,10 +25,17 @@ const SidebarItem = ({ name, active, onClick, icon }: SidebarItemProps) => {
       )}
       {icon}
 
-      {/* <Image width={18} height={20} src={icon} alt={`${name} icon`} />
+      {/* <Image width={18} height={20} src={icon} alt={`${name} icon`} /> */}
       {!isSidebarFold ? (
-        <span className="text-surd-grey-1 hidden md:inline">{name}</span>
-      ) : null} */}
+        <span
+          className={cn(
+            "text-surd-grey-1 hidden md:inline",
+            active ? "text-surd-blue-1" : "text-surd-grey=-1"
+          )}
+        >
+          {name}
+        </span>
+      ) : null}
     </li>
   );
 };

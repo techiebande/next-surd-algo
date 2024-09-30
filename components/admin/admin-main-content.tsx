@@ -8,9 +8,11 @@ import GrindStrategy from "../grindStrategy";
 import GrindStrategyByDate from "../grindStrategyByDate";
 import EAs from "../EAs";
 import Perceptrader from "../perceptrader";
+import { AdminDashboardContext } from "./admin-dashboard";
+import Dashboard from "./dashboard";
 
 const AdminMainContent = () => {
-  const { isSidebarFold, dashboardState } = useContext(DashboardContext);
+  const { isSidebarFold, dashboardState } = useContext(AdminDashboardContext);
   return (
     <div
       className={cn(
@@ -22,22 +24,7 @@ const AdminMainContent = () => {
     >
       <Navbar />
       <div className="w-full">
-        {dashboardState.currentTab.name === "Strategies" ? (
-          <Strategies />
-        ) : null}
-        {dashboardState.currentTab.name === "grindStrategyOverview" ? (
-          <GrindStrategyOverview />
-        ) : null}
-        {dashboardState.currentTab.name === "grindStrategy" ? (
-          <GrindStrategy />
-        ) : null}
-        {dashboardState.currentTab.name === "grindStrategyByDate" ? (
-          <GrindStrategyByDate />
-        ) : null}
-        {dashboardState.currentTab.name === "EAs" ? <EAs /> : null}
-        {dashboardState.currentTab.name === "Perceptrader" ? (
-          <Perceptrader />
-        ) : null}
+        {dashboardState.currentTab === "dashboard" ? <Dashboard /> : null}
       </div>
     </div>
   );

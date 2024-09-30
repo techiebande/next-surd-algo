@@ -12,7 +12,7 @@ const SectionTabs = ({ items }: { items: { name: string }[] }) => {
               "h-full border flex items-center justify-center px-5 cursor-pointer text-sm ",
               activeTab.name === item.name
                 ? "bg-white dark:bg-black dark:border-surd-grey-3 text-surd-blue-1 dark:text-white font-segoeUISemiBold"
-                : "bg-transparent dark:text-surd-grey-4"
+                : "bg-transparent text-gray-700 dark:text-surd-grey-4"
             )}
             onClick={() => setActiveStrategyTab(item)}
             key={index}
