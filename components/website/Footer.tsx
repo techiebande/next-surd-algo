@@ -11,7 +11,7 @@ const Star = () => {
 
 const Footer = () => {
   return (
-    <footer className="bg-black flex items-center justify-center gap-5 flex-wrap h-[60px] w-full">
+    <footer className="bg-black flex items-center justify-center gap-5 flex-wrap h-[60px] w-full p-5">
       <p>
         Our customers say{" "}
         <span className="text-lg font-segoeUISemiBold">Excellent</span>
