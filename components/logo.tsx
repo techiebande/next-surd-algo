@@ -1,12 +1,18 @@
+"use client";
+
 import React, { useContext } from "react";
 import { DashboardContext } from "./dashboard";
 import { AdminDashboardContext } from "./admin/admin-dashboard";
+import { cn } from "@/lib/utils";
 
-const Logo = () => {
+const Logo = ({ className }: { className?: string }) => {
   const { isSidebarFold } = useContext(AdminDashboardContext);
   return (
     <div
-      className="flex justify-center items-center gap-2 w-full md:justify-start"
+      className={cn(
+        "flex justify-center items-center gap-2 w-full md:justify-start",
+        className
+      )}
       role="banner"
     >
       <div className="border border-white font-segoeUIBold text-sm rounded-surd-rounded-10px w-[34px] h-[34px] bg-surd-dark-blue text-white flex items-center justify-center">
