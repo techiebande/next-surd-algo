@@ -18,13 +18,7 @@ const TradingTools = ({ className }: { className?: string }) => {
         <Image src={MT4} width={131} height={40} alt="mt4" />
         <Image src={MT5} width={131} height={40} alt="mt4" />
         <Image src={MYFXBook} width={131} height={40} alt="mt4" />
-        <Image
-          className="border border-red-500"
-          src={MQL5}
-          width={131}
-          height={40}
-          alt="mt4"
-        />
+        <Image src={MQL5} width={131} height={40} alt="mt4" />
       </div>
     </div>
   );
