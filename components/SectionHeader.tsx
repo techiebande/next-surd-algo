@@ -4,10 +4,12 @@ const SectionHeader = ({
   location,
   title,
   actionButton,
+  searchComp,
 }: {
   title: string;
   location: string;
   actionButton?: React.ReactNode;
+  searchComp?: React.ReactNode;
 }) => {
   return (
     <div className="flex items-start justify-between text-gray-900 dark:text-white">
@@ -15,6 +17,7 @@ const SectionHeader = ({
         <h2 className="text-2xl font-segoeUISemiBold">{title}</h2>
         <span className="text-sm dark:text-surd-grey-4">{location}</span>
       </div>
+      {searchComp}
       {actionButton}
     </div>
   );

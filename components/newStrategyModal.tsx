@@ -10,12 +10,18 @@ import {
 import PlusIcon from "@/icons/plus.svg";
 import CloseIcon from "@/icons/close.svg";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
-export default function AddNewNewStrategy() {
+export default function AddNewNewStrategy({ isAdmin }: { isAdmin?: boolean }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="hover:bg-surd-yellow-1 bg-surd-yellow-1 text-black text-sm font-sogoeUISemiBold p-2 rounded-sm gap-4 h-[38px] flex items-center justify-center">
+        <Button
+          className={cn(
+            "text-sm font-sogoeUISemiBold p-2 rounded-sm gap-4 h-[38px] flex items-center justify-center",
+            isAdmin ? "bg-blue-500 text-white" : "bg-surd-yellow-1 text-black"
+          )}
+        >
           <Image src={PlusIcon} alt="new strategy" width={24} height={24} />
           New Strategy
         </Button>

@@ -7,7 +7,7 @@ import SectionTabs from "./sectionTabs";
 import { strategyTabItems } from "@/lib/strategyTabItems";
 import SectionHeader from "./SectionHeader";
 
-const Strategies = () => {
+const Strategies = ({ isAdmin }: { isAdmin?: boolean }) => {
   return (
     <SectionContainer>
       <SectionTabs items={strategyTabItems} />
@@ -15,7 +15,7 @@ const Strategies = () => {
         <SectionHeader
           title="Strategies"
           location="Home / Strategies"
-          actionButton={<AddNewNewStrategy />}
+          actionButton={<AddNewNewStrategy isAdmin={isAdmin} />}
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-5">

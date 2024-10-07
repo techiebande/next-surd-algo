@@ -5,7 +5,13 @@ import { DashboardContext } from "./dashboard";
 import { AdminDashboardContext } from "./admin/admin-dashboard";
 import { cn } from "@/lib/utils";
 
-const Logo = ({ className }: { className?: string }) => {
+const Logo = ({
+  className,
+  showText,
+}: {
+  className?: string;
+  showText?: boolean;
+}) => {
   const { isSidebarFold } = useContext(AdminDashboardContext);
   return (
     <div
@@ -20,7 +26,12 @@ const Logo = ({ className }: { className?: string }) => {
       </div>
 
       {!isSidebarFold ? (
-        <h1 className="hidden font-segoeUIBold text-sm text-white md:block text-nowrap">
+        <h1
+          className={cn(
+            "font-segoeUIBold text-sm text-white text-nowrap",
+            showText ? "block" : "hidden md:block"
+          )}
+        >
           SurdAlgo EA
         </h1>
       ) : null}

@@ -8,6 +8,9 @@ import GrindStrategy from "./grindStrategy";
 import GrindStrategyByDate from "./grindStrategyByDate";
 import EAs from "./EAs";
 import Perceptrader from "./perceptrader";
+import Tickets from "./tickets";
+import Billings from "./Billings";
+import ClientDashboard from "./ClientDashboard";
 
 const MainContent = () => {
   const { isSidebarFold, dashboardState } = useContext(DashboardContext);
@@ -37,6 +40,11 @@ const MainContent = () => {
         {dashboardState.currentTab.name === "EAs" ? <EAs /> : null}
         {dashboardState.currentTab.name === "Perceptrader" ? (
           <Perceptrader />
+        ) : null}
+        {dashboardState.currentTab.name === "Tickets" ? <Tickets /> : null}
+        {dashboardState.currentTab.name === "Billings" ? <Billings /> : null}
+        {dashboardState.currentTab.name === "Dashboard" ? (
+          <ClientDashboard />
         ) : null}
       </div>
     </div>

@@ -10,12 +10,16 @@ const EACard = ({
   version,
   title,
   onClick,
+  purchase,
+  purchased,
 }: {
   image: string;
   title: string;
   version: string;
   description: string;
-  onClick: () => void;
+  onClick?: () => void;
+  purchase?: boolean;
+  purchased?: boolean;
 }) => {
   return (
     <RoundedShadowedBox
@@ -30,10 +34,33 @@ const EACard = ({
         </div>
 
         <p className="text-xs text-ellipsis">{description}</p>
-        <Button className="bg-surd-yellow-1 text-black hover:bg-surd-yellow-1 mt-auto gap-2 flex items-center justify-center h-[38px]">
-          <Image src={CartIcon} alt="" width={20} height={20} />
-          Purchase
-        </Button>
+        {!purchase && !purchased ? (
+          <Button className="bg-surd-yellow-1 text-black hover:bg-surd-yellow-1 mt-auto gap-2 flex items-center justify-center h-[38px]">
+            <Image src={CartIcon} alt="" width={20} height={20} />
+            Purchase
+          </Button>
+        ) : null}
+        {purchase && !purchased ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 mt-auto gap-5">
+            <Button className="bg-surd-yellow-1 text-black hover:bg-surd-yellow-1 mt-auto gap-2 flex items-center justify-center h-[38px]">
+              <Image src={CartIcon} alt="" width={20} height={20} />
+              Purchase
+            </Button>
+            <Button className=" text-yellow-500 bg-black border border-surd-yellow-1 mt-auto gap-2 flex items-center justify-center h-[38px]">
+              Try for free
+            </Button>
+          </div>
+        ) : null}
+        {purchased ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 mt-auto gap-5">
+            <Button
+              disabled
+              className="w-full bg-gray-700 text-white mt-auto gap-2 flex items-center justify-center h-[38px]"
+            >
+              Purchased
+            </Button>
+          </div>
+        ) : null}
       </div>
     </RoundedShadowedBox>
   );

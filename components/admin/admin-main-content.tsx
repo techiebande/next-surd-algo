@@ -10,6 +10,11 @@ import EAs from "../EAs";
 import Perceptrader from "../perceptrader";
 import { AdminDashboardContext } from "./admin-dashboard";
 import Dashboard from "./dashboard";
+import Messages from "../Messages";
+import Billings from "../Billings";
+import Tickets from "../tickets";
+import BillingsAdmin from "../BillingsAdmin";
+import Users from "../Users";
 
 const AdminMainContent = () => {
   const { isSidebarFold, dashboardState } = useContext(AdminDashboardContext);
@@ -25,8 +30,14 @@ const AdminMainContent = () => {
       <Navbar />
       <div className="w-full">
         {dashboardState.currentTab === "dashboard" ? <Dashboard /> : null}
-        {dashboardState.currentTab === "EAs" ? <EAs /> : null}
-        {dashboardState.currentTab === "strategies" ? <Strategies /> : null}
+        {dashboardState.currentTab === "EAs" ? <EAs isAdmin={true} /> : null}
+        {dashboardState.currentTab === "strategies" ? (
+          <Strategies isAdmin={true} />
+        ) : null}
+        {dashboardState.currentTab === "messages" ? <Messages /> : null}
+        {dashboardState.currentTab === "billings" ? <BillingsAdmin /> : null}
+        {dashboardState.currentTab === "tickets" ? <Tickets /> : null}
+        {dashboardState.currentTab === "clients" ? <Users /> : null}
       </div>
     </div>
   );

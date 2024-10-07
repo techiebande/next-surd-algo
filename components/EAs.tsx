@@ -7,8 +7,11 @@ import EACard from "./EACard";
 import { expertAdvicers } from "@/lib/expertAdvicers";
 import { DashboardContext } from "./dashboard";
 import CardsGrid from "./CardsGrid";
+import Image from "next/image";
+import { Button } from "./ui/button";
+import PlusIcon from "@/icons/plus.svg";
 
-const EAs = () => {
+const EAs = ({ isAdmin }: { isAdmin?: boolean }) => {
   const { dashboardState, setDashboardState } = useContext(DashboardContext);
   return (
     <SectionContainer>
@@ -17,6 +20,19 @@ const EAs = () => {
         <SectionHeader
           title="Expert Advisers"
           location="Home / Expert Advisers"
+          actionButton={
+            isAdmin ? (
+              <Button className=" bg-blue-500 text-white text-sm font-sogoeUISemiBold p-2 rounded-sm gap-4 h-[38px] flex items-center justify-center">
+                <Image
+                  src={PlusIcon}
+                  alt="new strategy"
+                  width={24}
+                  height={24}
+                />
+                Add Expert Adviser
+              </Button>
+            ) : null
+          }
         />
         <CardsGrid>
           {expertAdvicers.map(

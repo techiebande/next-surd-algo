@@ -10,7 +10,7 @@ import ThemeSwitch from "./themeSwitch";
 const NavbarItems = () => {
   return (
     <div className="flex flex-col md:flex-row md:items-center gap-5 md:gap-10 justify-end">
-      <Search />
+      <Search placeholder="Search..." />
       <div className="flex items-center gap-5">
         <LanguageDropdown />
         <Notification />
