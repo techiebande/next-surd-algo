@@ -25,6 +25,8 @@ const AdminMainContent = () => {
       <Navbar />
       <div className="w-full">
         {dashboardState.currentTab === "dashboard" ? <Dashboard /> : null}
+        {dashboardState.currentTab === "EAs" ? <EAs /> : null}
+        {dashboardState.currentTab === "strategies" ? <Strategies /> : null}
       </div>
     </div>
   );
