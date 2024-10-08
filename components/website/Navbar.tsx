@@ -5,6 +5,17 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { MenuIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
+import HomeIcon from "@/icons/Home.svg";
+import EAsIcon from "@/icons/EAs.svg";
+import EAsIconActive from "@/icons/EasActive.svg";
+import HomeIconActive from "@/icons/HomeActive.svg";
+import StrategiesIcon from "@/icons/Strategies.svg";
+import StrategiesIconActive from "@/icons/StrategiesIcon.svg";
+import CouponActive from "@/icons/coupon-line.svg";
+import Coupon from "@/icons/coupon-line-active.svg";
+import BillActive from "@/icons/bill-line-active.svg";
+import Bill from "@/icons/bill-line.svg";
 
 const Logo = () => {
   return (
@@ -23,7 +34,18 @@ const Logo = () => {
   );
 };
 
-const Navlink = ({ name, isActive }: { name: string; isActive?: boolean }) => {
+const Navlink = ({
+  name,
+  isActive,
+  link,
+  tab,
+}: {
+  name: string;
+  isActive?: boolean;
+  link: string;
+  tab: string;
+}) => {
+  const router = useRouter();
   return (
     <li
       className={cn(
@@ -31,7 +53,34 @@ const Navlink = ({ name, isActive }: { name: string; isActive?: boolean }) => {
         isActive ? "border-b-[3px] border-surd-yellow-1" : ""
       )}
     >
-      <Link href={`#${name}`}> {name}</Link>
+      <Button
+        className="bg-transparent p-0 shadow-none"
+        onClick={() => {
+          if (tab === "EAs") {
+            localStorage.setItem(
+              "activeTab",
+              JSON.stringify({
+                name: "EAs",
+                icon: EAsIcon,
+                activeIcon: EAsIconActive,
+              })
+            );
+          } else if (tab === "Strategies") {
+            localStorage.setItem(
+              "activeTab",
+              JSON.stringify({
+                name: "Strategies",
+                icon: StrategiesIcon,
+                activeIcon: StrategiesIconActive,
+              })
+            );
+          }
+
+          router.push(link);
+        }}
+      >
+        {name}
+      </Button>
     </li>
   );
 };
@@ -39,9 +88,9 @@ const Navlink = ({ name, isActive }: { name: string; isActive?: boolean }) => {
 const NavLinks = () => (
   <div className="flex flex-col md:flex-row md:items-center gap-10">
     <ul className="flex items-center gap-5">
-      <Navlink isActive name="Home" />
-      <Navlink name="Expert Advicers" />
-      <Navlink name="Strategies" />
+      <Navlink tab="home" link="/" isActive name="Home" />
+      <Navlink tab="EAs" link="/client-area" name="Expert Advicers" />
+      <Navlink tab="Strategies" link="/client-area" name="Strategies" />
     </ul>
     <Button className="bg-surd-yellow-1 hover:bg-surd-yellow-1 text-sm font-segoeUIBold rounded-3xl ml-auto">
       <Link href="/client-area">CLIENT AREA</Link>

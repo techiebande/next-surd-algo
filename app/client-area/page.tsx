@@ -1,7 +1,8 @@
+import Dashboard from "@/components/dashboard";
 import React from "react";
 
 const ClientPage = () => {
-  return null;
+  return <Dashboard />;
 };
 
 export default ClientPage;

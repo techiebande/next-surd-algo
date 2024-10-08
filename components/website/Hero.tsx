@@ -1,7 +1,25 @@
+"use client";
+
 import React from "react";
 import { Button } from "../ui/button";
+import { useRouter } from "next/navigation";
+import EAsIcon from "@/icons/EAs.svg";
+import EAsIconActive from "@/icons/EasActive.svg";
 
 const Hero = () => {
+  const router = useRouter();
+  const goToEA = () => {
+    localStorage.setItem(
+      "activeTab",
+      JSON.stringify({
+        name: "EAs",
+        icon: EAsIcon,
+        activeIcon: EAsIconActive,
+      })
+    );
+
+    router.push("/client-area");
+  };
   return (
     <div className="w-full  h-[688px] bg-[url('/images/ea.jpg')] bg-center bg-cover flex items-center md:items-start flex-col pt-5 md:pt-[100px] px-5 lg:px-[100px]">
       <div className="lg:w-1/2">
@@ -22,10 +40,16 @@ const Hero = () => {
           insights you need to succeed.
         </p>
         <div className="items-center gap-5 mt-5 grid grid-cols-2 md:grid-cols-3">
-          <Button className="bg-surd-yellow-1 rounded-[30px] h-10 hover:bg-surd-yellow-1 px-2">
+          <Button
+            onClick={goToEA}
+            className="bg-surd-yellow-1 rounded-[30px] h-10 hover:bg-surd-yellow-1 px-2"
+          >
             Purchase Expert Adviser
           </Button>
-          <Button className="bg-black text-surd-yellow-1 hover:bg-black h-10 rounded-[30px] border border-surd-yellow-1">
+          <Button
+            onClick={goToEA}
+            className="bg-black text-surd-yellow-1 hover:bg-black h-10 rounded-[30px] border border-surd-yellow-1"
+          >
             Try For Free
           </Button>
         </div>

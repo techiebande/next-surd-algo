@@ -33,12 +33,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
       <Providers>
         <body
           className={`${segoeUIRegular.variable} ${segoeUIBold.variable} ${segoeUISemibold.variable} antialiased font-segoeUI flex`}
         >
-          <Dashboard />
           {children}
         </body>
       </Providers>

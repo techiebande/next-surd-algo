@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "./sidebar";
 import MainContent from "./mainContent";
 import { sidebarItems } from "@/lib/sidebarItems";
 import { StaticImageData } from "next/image";
+import { useRouter } from "next/navigation";
 
 interface DashboardTab {
   name: string;
@@ -40,6 +41,14 @@ const Dashboard = () => {
 
     return null;
   };
+
+  const router = useRouter();
+
+  useEffect(() => {
+    console.log("refreshing...");
+    router.refresh();
+  }, []);
+
   return (
     <DashboardContext.Provider
       value={{

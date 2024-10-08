@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Logo from "./logo";
 import SidebarItem, { SidebarItemProps } from "./sidebarItem";
 import { sidebarItems } from "@/lib/sidebarItems";
@@ -8,7 +8,7 @@ import { DashboardContext } from "./dashboard";
 import { cn } from "@/lib/utils";
 
 const Sidebar = () => {
-  const [activeTab, setActiveTab] = useState(sidebarItems[2]);
+  const [activeTab, setActiveTab] = useState<any>(sidebarItems[0]);
 
   const selectTab = (item: SidebarItemProps) => {
     setActiveTab(item);
@@ -18,7 +18,13 @@ const Sidebar = () => {
 
   const sidebarClass = `${isSidebarFold ? "" : "md:w-[170px]"}`;
 
-  console.log(isSidebarFold);
+  useEffect(() => {
+    const active = localStorage.getItem("activeTab");
+    if (active) {
+      changeCurrentTab(JSON.parse(active));
+      setActiveTab(JSON.parse(active));
+    }
+  }, []);
 
   return (
     <aside
