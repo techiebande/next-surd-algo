@@ -18,8 +18,8 @@ const EAs = ({ isAdmin }: { isAdmin?: boolean }) => {
       <SectionTabs items={EATabItems} />
       <div className="px-5">
         <SectionHeader
-          title="Expert Advisers"
-          location="Home / Expert Advisers"
+          title="ExpertAdvisors"
+          location="Home / ExpertAdvisors"
           actionButton={
             isAdmin ? (
               <Button className=" bg-blue-500 text-white text-sm font-sogoeUISemiBold p-2 rounded-sm gap-4 h-[38px] flex items-center justify-center">
@@ -29,7 +29,7 @@ const EAs = ({ isAdmin }: { isAdmin?: boolean }) => {
                   width={24}
                   height={24}
                 />
-                Add Expert Adviser
+                Add ExpertAdvisor
               </Button>
             ) : null
           }

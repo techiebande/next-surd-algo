@@ -44,7 +44,7 @@ const Hero = () => {
             onClick={goToEA}
             className="bg-surd-yellow-1 rounded-[30px] h-10 hover:bg-surd-yellow-1 px-2"
           >
-            Purchase Expert Adviser
+            Purchase ExpertAdvisor
           </Button>
           <Button
             onClick={goToEA}
