@@ -16,6 +16,7 @@ import CouponActive from "@/icons/coupon-line.svg";
 import Coupon from "@/icons/coupon-line-active.svg";
 import BillActive from "@/icons/bill-line-active.svg";
 import Bill from "@/icons/bill-line.svg";
+import Image from "next/image";
 
 const Logo = () => {
   return (
@@ -23,13 +24,14 @@ const Logo = () => {
       className={cn("flex items-center gap-2 md:justify-start")}
       role="banner"
     >
-      <div className="border border-white font-segoeUIBold text-sm rounded-surd-rounded-10px w-[34px] h-[34px] bg-surd-dark-blue text-white flex items-center justify-center">
+      {/* <div className="border border-white font-segoeUIBold text-sm rounded-surd-rounded-10px w-[34px] h-[34px] bg-surd-dark-blue text-white flex items-center justify-center">
         SA
-      </div>
+      </div> */}
+      <Image src="/images/surd-logo.jpeg" alt="" width={200} height={200} />
 
-      <h1 className="text-[20px] font-segoeUIBold text-sm text-black text-nowrap">
+      {/* <h1 className="text-[20px] font-segoeUIBold text-sm text-black text-nowrap">
         SurdAlgo EA
-      </h1>
+      </h1> */}
     </div>
   );
 };
@@ -107,6 +109,7 @@ const Navbar = () => {
   return (
     <div className="relative h-[80px] bg-white items-center flex justify-between w-full px-5 lg:px-[100px]">
       <Logo />
+      {/* <Image src="/images/surd-logo.jpeg" alt="" width={34} height={34} /> */}
       <div className="hidden md:block">
         <NavLinks />
       </div>
