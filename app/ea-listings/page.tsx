@@ -22,7 +22,7 @@ const EAListingsPage = () => {
       </div>
       <div className="text-center">
         <h1 className="font-segoeUISemiBold text-[28px]">
-          Market Proven Expert Advicers
+          Market Proven ExpertAdvisors
         </h1>
         <p className="text-sm">
           Choose the EA you will like to Purchase or Try for free

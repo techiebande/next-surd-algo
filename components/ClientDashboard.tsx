@@ -37,7 +37,7 @@ const ClientDashboard = () => {
         <div className="grid grid-cols-12 gap-5 mt-5">
           <div className="col-span-12 lg:col-span-8 border border-gray-400 rounded-lg p-5">
             <div className="flex items-center justify-between">
-              <p className="text-[18px]">My Expert Advicers</p>
+              <p className="text-[18px]">My ExpertAdvisors</p>
               <Button className="bg-transparent border-none p-0 text-surd-yellow-1 font-bold">
                 See All
               </Button>

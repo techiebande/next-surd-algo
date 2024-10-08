@@ -91,7 +91,7 @@ const NavLinks = () => (
   <div className="flex flex-col md:flex-row md:items-center gap-10">
     <ul className="flex items-center gap-5">
       <Navlink tab="home" link="/" isActive name="Home" />
-      <Navlink tab="EAs" link="/client-area" name="Expert Advicers" />
+      <Navlink tab="EAs" link="/client-area" name="ExpertAdvisors" />
       <Navlink tab="Strategies" link="/client-area" name="Strategies" />
     </ul>
     <Button className="bg-surd-yellow-1 hover:bg-surd-yellow-1 text-sm font-segoeUIBold rounded-3xl ml-auto">

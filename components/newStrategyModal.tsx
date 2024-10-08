@@ -62,13 +62,13 @@ export default function AddNewNewStrategy({ isAdmin }: { isAdmin?: boolean }) {
           </div>
           <div>
             <label className="block mb-2 text-sm font-medium">
-              Select Expert Advicer
+              Select ExpertAdvisor
             </label>
             <select
               id="countries"
               className="border outline-none border-surd-gray-4 text-surd-grey-1 text-sm rounded-lg block w-full p-2.5 bg-transparent"
             >
-              <option selected>Select Expert Advicer</option>
+              <option selected>Select ExpertAdvisor</option>
               <option value="US">United States</option>
               <option value="CA">Canada</option>
               <option value="FR">France</option>

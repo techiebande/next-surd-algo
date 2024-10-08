@@ -24,7 +24,7 @@ const Strategies = ({ isAdmin }: { isAdmin?: boolean }) => {
             alias="GS"
             details={[
               { name: "Account ID", value: "7894561" },
-              { name: "Expert Advicer", value: "Percepttrader AI" },
+              { name: "ExpertAdvisor", value: "Percepttrader AI" },
             ]}
           />
           <StrategyCard
@@ -32,7 +32,7 @@ const Strategies = ({ isAdmin }: { isAdmin?: boolean }) => {
             alias="MS"
             details={[
               { name: "Account ID", value: "7894561" },
-              { name: "Expert Advicer", value: "Percepttrader AI" },
+              { name: "ExpertAdvisor", value: "Percepttrader AI" },
             ]}
           />
         </div>
