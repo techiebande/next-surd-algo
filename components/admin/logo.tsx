@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useContext } from "react";
-import { DashboardContext } from "./dashboard";
-import { AdminDashboardContext } from "./admin/admin-dashboard";
 import { cn } from "@/lib/utils";
+import { AdminDashboardContext } from "./admin-dashboard";
 
 const Logo = ({
   className,
@@ -12,7 +11,7 @@ const Logo = ({
   className?: string;
   showText?: boolean;
 }) => {
-  const { isSidebarFold } = useContext(DashboardContext);
+  const { isSidebarFold } = useContext(AdminDashboardContext);
   return (
     <div
       className={cn(

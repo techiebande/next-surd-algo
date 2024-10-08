@@ -1,20 +1,21 @@
 "use client";
 
 import React, { useContext, useState } from "react";
-import ThemeSwitch from "./themeSwitch";
+// import ThemeSwitch from "./themeSwitch";
 import MenuFold from "@/icons/menu-fold-line.svg";
 import MenuUnFold from "@/icons/menu-unfold-line.svg";
 import HamburgerMenu from "@/icons/menu-line.svg";
 
 import Image from "next/image";
-import { Button } from "./ui/button";
+// import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
-import NavbarItems from "./navbarItems";
-import { AdminDashboardContext } from "./admin/admin-dashboard";
-import { DashboardContext } from "./dashboard";
+// import NavbarItems from "./navbarItems";
+import { AdminDashboardContext } from "./admin-dashboard";
+import { Button } from "../ui/button";
+import NavbarItems from "../navbarItems";
 
 const Navbar = () => {
-  const { isSidebarFold, toggleSidebar } = useContext(DashboardContext);
+  const { isSidebarFold, toggleSidebar } = useContext(AdminDashboardContext);
   const [showMobileNav, setShowMobileNav] = useState(false);
 
   const toggleMobileNav = () => {

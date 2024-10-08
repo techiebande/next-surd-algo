@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useContext, useState } from "react";
-import Logo from "../logo";
+// import Logo from "../logo";
 import { sidebarItems } from "@/lib/sidebarItems";
 import { DashboardContext } from "../dashboard";
 import { cn } from "@/lib/utils";
@@ -15,6 +15,7 @@ import MessagesIcon from "../icons/Messages";
 import TicketIcon from "../icons/TicketIcon";
 import NotesIcon from "../icons/NotesIcons";
 import FavoriteIcon from "../icons/FavoriteIcon";
+import Logo from "./logo";
 
 const AdminSidebar = () => {
   const [activeTab, setActiveTab] = useState("dashboard");

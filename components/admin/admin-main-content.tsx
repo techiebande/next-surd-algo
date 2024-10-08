@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Navbar from "../navbar";
+// import Navbar from "../navbar";
 import { DashboardContext } from "../dashboard";
 import { cn } from "@/lib/utils";
 import Strategies from "../strategies";
@@ -15,6 +15,7 @@ import Billings from "../Billings";
 import Tickets from "../tickets";
 import BillingsAdmin from "../BillingsAdmin";
 import Users from "../Users";
+import Navbar from "./navbar";
 
 const AdminMainContent = () => {
   const { isSidebarFold, dashboardState } = useContext(AdminDashboardContext);

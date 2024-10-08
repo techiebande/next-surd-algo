@@ -18,6 +18,8 @@ const Sidebar = () => {
 
   const sidebarClass = `${isSidebarFold ? "" : "md:w-[170px]"}`;
 
+  console.log(isSidebarFold);
+
   return (
     <aside
       className={cn(
